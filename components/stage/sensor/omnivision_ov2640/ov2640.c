@@ -22,7 +22,7 @@
 #define UXGA_VSIZE (1200)
 
 /* OV2640 sensor info */
-#define SLAVE_ADDR 0x60
+#define SLAVE_ADDR 0x3C
 #define REG_SENSOR_ID_H 0x300a
 #define REG_SENSOR_ID_L 0x300b
 #define SENSOR_ID_H 0x26
@@ -308,7 +308,7 @@ int ov2640_probe(void)
     SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_H, &id_h);
     SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_L, &id_l);
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
-    BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
+    //BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
 
     if (SENSOR_ID_H == id_h && SENSOR_ID_L == id_l)
     {
