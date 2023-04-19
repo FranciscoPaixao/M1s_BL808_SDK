@@ -226,7 +226,7 @@ static const uint16_t ov2640_reglist[][2] =
 };
 
 /* OV2640 sensor info */
-#define OV2640_ADDR 0x3c
+#define OV2640_ADDR 0x3C
 #define SENSOR_ID_REG_H 0x0A
 #define SENSOR_ID_REG_L 0x0B
 

@@ -10,22 +10,10 @@ COMPONENT_PRIV_INCLUDEDIRS :=
 
 
 COMPONENT_SRCDIRS := driver \
-					 cista_c2399 \
-					 cista_c2490 \
-					 cista_c2496 \
-					 galaxycore_gc1054 \
-					 galaxycore_gc2053 \
-					 galaxycore_gc2093 \
-					 galaxycore_gc0308 \
-					 galaxycore_gc0328 \
 					 omnivision_ov9732 \
 					 omnivision_ov2685 \
 					 omnivision_ov2640 \
-					 smartsens_sc1245 \
-					 smartsens_sc2232 \
-					 smartsens_sc2336 \
-					 opnous_opnm8508pa \
-					 byd_bf2013
+
 
 COMPONENT_ADD_LDFLAGS_HEAD := -Wl,--whole-archive
 COMPONENT_ADD_LDFLAGS_TAIL := -Wl,--no-whole-archive
