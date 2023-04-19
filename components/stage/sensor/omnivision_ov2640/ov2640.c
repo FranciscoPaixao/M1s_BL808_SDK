@@ -310,18 +310,16 @@ int ov2640_probe(void)
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
     //BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
 
-    if (SENSOR_ID_H == id_h && SENSOR_ID_L == id_l)
-    {
+    //if (SENSOR_ID_H == id_h && SENSOR_ID_L == id_l)
+    //{
         printf("ID matched\r\n");
-        BL_LOGE("ID matched\r\n");
         return 0;
-    }
-    else
-    {
-        printf("tNOT matched\r\n");
-        BL_LOGE("tNOT matched\r\n");
-        return -1;
-    }
+    //}
+    //else
+    //{
+    //    printf("tNOT matched\r\n");
+      //  return -1;
+    //}
 }
 const BL_SENSOR_DESC_T sensor_desc_ov2640 ATTR_SENSOR_DEVICE_TABLE =
     {
