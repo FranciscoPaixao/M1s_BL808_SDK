@@ -310,7 +310,7 @@ int ov2640_probe(void)
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
     //BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
 
-    if (id_H == 0x26 && (id_L == 0x40||id_L == 0x41 || id_L == 0x42))
+    if (id_h == 0x26 && (id_l == 0x40||id_l == 0x41 || id_l == 0x42))
     {
         printf("ID matched\r\n");
         return 0;
