@@ -305,8 +305,8 @@ static int reset(sensor_t *sensor)
 int ov2640_probe(void)
 {
     uint8_t id_h = 0, id_l = 0;
-    SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_H, &id_h);
-    SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_L, &id_l);
+    SCCB_Read_Reg16(SLAVE_ADDR, 0x0A, &id_h);
+    SCCB_Read_Reg16(SLAVE_ADDR, 0x0B, &id_l);
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
     //BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
 
