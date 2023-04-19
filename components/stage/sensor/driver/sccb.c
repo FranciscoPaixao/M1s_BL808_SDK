@@ -190,7 +190,24 @@ int SCCB_Read_Reg16(uint8_t slave_addr, uint16_t reg_addr, uint8_t* rdata)
         return -1;
     }
 }
+int SCCB_Read_Reg8(uint8_t slave_addr, uint8_t reg_addr, uint8_t* rdata)
+{
+    I2C_Transfer_Cfg cfg;
 
+    cfg.slaveAddr = slave_addr;
+    cfg.slaveAddr10Bit = DISABLE;
+    cfg.stopEveryByte = DISABLE;
+    cfg.subAddrSize = 2;
+    cfg.subAddr = reg_addr;
+    cfg.dataSize = 1;
+    cfg.data = rdata;
+    cfg.clk = I2C_SPEED;
+    if(SUCCESS == I2C_MasterReceiveBlocking(I2C_ID, &cfg)) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
 int SCCB_Write(uint8_t slave_addr, uint8_t reg_addr, uint8_t data)
 {
     I2C_Transfer_Cfg cfg;

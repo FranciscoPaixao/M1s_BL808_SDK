@@ -237,10 +237,10 @@ static const uint16_t ov2640_reglist[][2] =
 int ov2640_probe(void)
 {
     uint8_t id_h = 0, id_l = 0;
-    SCCB_Read_Reg16(OV2640_ADDR, SENSOR_ID_REG_H, &id_h);
-    SCCB_Read_Reg16(OV2640_ADDR, SENSOR_ID_REG_L, &id_l);
+    SCCB_Read(OV2640_ADDR, SENSOR_ID_REG_H, &id_h);
+    SCCB_Read_Dbg(OV2640_ADDR, SENSOR_ID_REG_H, &id_h);
+    SCCB_Read(OV2640_ADDR, SENSOR_ID_REG_L, &id_l);
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
-    printf(sensor_probe(OV2640_ADDR, SENSOR_ID_REG_H, SENSOR_ID_REG_L, SENSOR_ID_H, SENSOR_ID_L));
     if (id_h == SENSOR_ID_H && (id_l == 0x40||id_l == 0x41 || id_l == 0x42)) {
         printf("ID matched\r\n");
         return 0;
