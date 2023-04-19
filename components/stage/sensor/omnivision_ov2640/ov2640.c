@@ -313,11 +313,16 @@ int ov2640_probe(void)
     if (id_h == 0x26 && (id_l == 0x40||id_l == 0x41 || id_l == 0x42))
     {
         printf("ID matched\r\n");
+        println(id_h);
+        println(id_l);
         return 0;
     }
     else
     {
+
         printf("NOT matched\r\n");
+        println(id_h);
+        println(id_l);
         return -1;
     }
 }
