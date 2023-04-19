@@ -17,7 +17,7 @@
 //#include "camera.h"
 //#include "ov2640.h"
 #define OV2640_FORMAT_USE OV2640_FORMAT_YUV422
-static const uint16_t ov2640_reglist[][2] =
+static const uint8_t ov2640_reglist[][2] =
 {
 {0xff, 0x0}, 
 	{0x2c, 0xff}, 
@@ -238,7 +238,6 @@ int ov2640_probe(void)
 {
     uint8_t id_h = 0, id_l = 0;
     SCCB_Read(OV2640_ADDR, SENSOR_ID_REG_H, &id_h);
-    SCCB_Read_Dbg(OV2640_ADDR, SENSOR_ID_REG_H, &id_h);
     SCCB_Read(OV2640_ADDR, SENSOR_ID_REG_L, &id_l);
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
     if (id_h == SENSOR_ID_H && (id_l == 0x40||id_l == 0x41 || id_l == 0x42)) {
@@ -254,7 +253,7 @@ int ov2640_reset(sensor_t *sensor)
 {
     int i;
     for (i = 0; i < sizeof(ov2640_reglist)/sizeof(ov2640_reglist[0]); i++){
-       SCCB_Write_Reg16(OV2640_ADDR, ov2640_reglist[i][0], (uint16_t)ov2640_reglist[i][1]);
+       SCCB_Write(OV2640_ADDR, ov2640_reglist[i][0], (uint8_t)ov2640_reglist[i][1]);
     }
 
     return 0;
