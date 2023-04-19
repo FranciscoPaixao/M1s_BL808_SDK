@@ -20,6 +20,7 @@ COMPONENT_SRCDIRS := driver \
 					 galaxycore_gc0328 \
 					 omnivision_ov9732 \
 					 omnivision_ov2685 \
+					 omnivision_ov2640 \
 					 smartsens_sc1245 \
 					 smartsens_sc2232 \
 					 smartsens_sc2336 \
