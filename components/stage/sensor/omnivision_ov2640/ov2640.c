@@ -240,7 +240,7 @@ int ov2640_probe(void)
     SCCB_Read_Reg16(OV2640_ADDR, SENSOR_ID_REG_L, &id_l);
     printf("-----------camera id %02x%02x \r\n", id_h, id_l);
 
-    if (id_H == SENSOR_ID_H && (id_L == 0x40||id_L == 0x41 || id_L == 0x42)) {
+    if (id_H == 0x26 && (id_L == 0x40||id_L == 0x41 || id_L == 0x42)) {
         printf("ID matched\r\n");
         return 0;
     } else {
