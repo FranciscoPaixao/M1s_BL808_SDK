@@ -304,22 +304,7 @@ static int reset(sensor_t *sensor)
 
 int ov2640_probe(void)
 {
-    uint8_t id_h = 0, id_l = 0;
-    SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_H, &id_h);
-    SCCB_Read_Reg16(SLAVE_ADDR, REG_SENSOR_ID_L, &id_l);
-    printf("-----------camera id %02x%02x \r\n", id_h, id_l);
-    //BL_LOGE("-----------camera id %02x%02x \r\n", id_h, id_l);
-
-    //if (SENSOR_ID_H == id_h && SENSOR_ID_L == id_l)
-    //{
-        printf("ID matched\r\n");
-        return 0;
-    //}
-    //else
-    //{
-    //    printf("tNOT matched\r\n");
-      //  return -1;
-    //}
+    return sensor_probe(SLAVE_ADDR, REG_SENSOR_ID_H, REG_SENSOR_ID_L, SENSOR_ID_H, SENSOR_ID_L);
 }
 const BL_SENSOR_DESC_T sensor_desc_ov2640 ATTR_SENSOR_DEVICE_TABLE =
     {
