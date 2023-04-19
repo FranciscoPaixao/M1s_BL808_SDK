@@ -12,6 +12,7 @@
 #include <string.h>
 
 #include "sensor.h"
+#include "sensor_internal.h"
 #include "sccb.h"
 //#include "camera.h"
 //#include "ov2640.h"
