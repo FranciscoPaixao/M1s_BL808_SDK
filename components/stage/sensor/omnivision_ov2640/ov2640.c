@@ -318,8 +318,8 @@ int ov2640_probe(void)
     }
     else
     {
-        printf("NOT matched\r\n");
-        BL_LOGE("NOT matched\r\n");
+        printf("tNOT matched\r\n");
+        BL_LOGE("tNOT matched\r\n");
         return -1;
     }
 }
